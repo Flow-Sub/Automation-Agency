@@ -38,7 +38,7 @@
     --glow-primary: 84 81% 44%;
     --glow-accent: 217 91% 60%;
     --glow-purple: 271 81% 56%;
-    
+
     --gradient-start: 0 0% 4%;
     --gradient-mid: 0 0% 6%;
     --gradient-end: 0 0% 8%;
@@ -62,10 +62,12 @@
 
   html {
     scroll-behavior: smooth;
+    zoom: 0.9;
   }
 }
 
 @layer utilities {
+
   /* Grid pattern overlay */
   .grid-pattern {
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -74,18 +76,16 @@
 
   /* Gradient backgrounds */
   .gradient-hero {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--gradient-start)) 0%,
-      hsl(var(--gradient-mid)) 50%,
-      hsl(var(--gradient-end)) 100%
-    );
+    background: linear-gradient(180deg,
+        hsl(var(--gradient-start)) 0%,
+        hsl(var(--gradient-mid)) 50%,
+        hsl(var(--gradient-end)) 100%);
   }
 
   /* Glow effects */
   .glow-primary {
     box-shadow: 0 0 60px 20px hsla(var(--glow-primary), 0.3),
-                0 0 100px 40px hsla(var(--glow-primary), 0.1);
+      0 0 100px 40px hsla(var(--glow-primary), 0.1);
   }
 
   .glow-accent {
@@ -153,9 +153,12 @@
   }
 
   @keyframes pulseGlow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 20px 5px hsla(var(--glow-primary), 0.3);
     }
+
     50% {
       box-shadow: 0 0 40px 15px hsla(var(--glow-primary), 0.5);
     }
@@ -168,8 +171,15 @@
   }
 
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
   }
 
   /* Waveform animation */
@@ -178,8 +188,15 @@
   }
 
   @keyframes waveform {
-    0%, 100% { transform: scaleY(0.3); }
-    50% { transform: scaleY(1); }
+
+    0%,
+    100% {
+      transform: scaleY(0.3);
+    }
+
+    50% {
+      transform: scaleY(1);
+    }
   }
 
   /* Float animation */
@@ -188,8 +205,15 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   /* Slide in animations */
@@ -202,6 +226,7 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -214,8 +239,13 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
   /* Scale in */
@@ -228,6 +258,7 @@
       opacity: 0;
       transform: scale(0.9);
     }
+
     to {
       opacity: 1;
       transform: scale(1);

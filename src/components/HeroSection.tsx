@@ -294,7 +294,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* ── GIF SECTION ── */}
-      <section className="relative h-[120vh] -mt-32 z-0">
+      <section className="relative h-[120vh] -mt-12 z-0">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
           <div
             className="w-[92%] h-[85vh]"
