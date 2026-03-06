@@ -262,17 +262,19 @@ const HeroSection: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <button
-              className="text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all"
+            <a
+              href="#contact"
+              className="text-white px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all inline-block"
               style={{
                 background: "#82BB40",
                 boxShadow: "0 8px 32px rgba(130,187,64,0.35)",
               }}
             >
               Start Automating
-            </button>
-            <button
-              className="px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all"
+            </a>
+            <a
+              href="#ai"
+              className="px-10 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all inline-block"
               style={{
                 border: "1.5px solid rgba(130,187,64,0.35)",
                 background: "rgba(130,187,64,0.06)",
@@ -288,7 +290,7 @@ const HeroSection: React.FC = () => {
               }}
             >
               View Use Cases
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </section>
