@@ -30,17 +30,17 @@ const ParticleCanvas: React.FC = () => {
     canvas.width = W;
     canvas.height = H;
 
-    const COUNT = 55;
+    const COUNT = 100;
     const COLOR = "130,187,64";
-    const MAX_DIST = 120;
+    const MAX_DIST = 140;
 
     const createParticle = (initial = false): Particle => ({
       x: Math.random() * W,
       y: initial ? Math.random() * H : H + 10,
-      size: Math.random() * 1.5 + 0.3,
-      speedY: -(Math.random() * 0.35 + 0.1),
-      speedX: (Math.random() - 0.5) * 0.15,
-      opacity: Math.random() * 0.65 + 0.2,
+      size: Math.random() * 2.5 + 0.5,
+      speedY: -(Math.random() * 0.5 + 0.1),
+      speedX: (Math.random() - 0.5) * 0.2,
+      opacity: Math.random() * 0.8 + 0.3,
       currentOpacity: 0,
       life: 0,
       maxLife: Math.random() * 400 + 200,
@@ -86,12 +86,12 @@ const ParticleCanvas: React.FC = () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.12;
+            const alpha = (1 - dist / MAX_DIST) * 0.25;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(${COLOR},${alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 1.0;
             ctx.stroke();
           }
         }
@@ -156,7 +156,7 @@ const HeroSection: React.FC = () => {
 
       {/* ── BACKGROUND CANVAS ── */}
       <div
-        className="fixed inset-0 -z-10 overflow-hidden"
+        className="absolute inset-0 -z-10 overflow-hidden"
         style={{ background: "#080808" }}
       >
         {/* Mesh gradient base */}
@@ -164,9 +164,9 @@ const HeroSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 10% 20%, rgba(130,187,64,0.13) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 80% at 90% 10%, rgba(130,187,64,0.08) 0%, transparent 55%),
-              radial-gradient(ellipse 70% 50% at 50% 100%, rgba(130,187,64,0.10) 0%, transparent 60%),
+              radial-gradient(ellipse 80% 60% at 10% 20%, rgba(130,187,64,0.2) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 90% 10%, rgba(130,187,64,0.15) 0%, transparent 55%),
+              radial-gradient(ellipse 70% 50% at 50% 100%, rgba(130,187,64,0.15) 0%, transparent 60%),
               radial-gradient(ellipse 100% 100% at 50% 50%, #080808 0%, #0D0D0D 100%)
             `,
           }}
@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             top: "-180px",
             left: "-180px",
             background:
-              "radial-gradient(circle, rgba(130,187,64,0.14) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(130,187,64,0.25) 0%, transparent 70%)",
             filter: "blur(60px)",
           }}
           animate={{ scale: [1, 1.06, 1] }}
@@ -200,7 +200,7 @@ const HeroSection: React.FC = () => {
             bottom: "-120px",
             right: "-120px",
             background:
-              "radial-gradient(circle, rgba(130,187,64,0.10) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(130,187,64,0.2) 0%, transparent 70%)",
             filter: "blur(70px)",
           }}
           animate={{ scale: [1, 1.09, 1] }}
@@ -237,12 +237,12 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-[8.5vw] leading-[0.8] font-black tracking-tighter uppercase mb-6"
+            className="text-[7.5vw] leading-[0.8] font-black tracking-tighter uppercase mb-6"
             style={{ color: "#FFFFFF" }}
           >
-            The Future of <br />
+            AI & Automation <br />
             <span style={{ color: "transparent", WebkitTextStroke: "2px #82BB40" }}>
-              Workflows
+              Agency
             </span>
           </motion.h1>
 
@@ -308,7 +308,7 @@ const HeroSection: React.FC = () => {
               className="w-full h-full relative overflow-hidden"
             >
               <img
-                src="https://static.wixstatic.com/media/46e2e0_8555b19a5bc545eba5a0322c00acd640~mv2.gif"
+                src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ihuMD68VtcmA/v0/-999x-999.gif"
                 alt="Automation Visual"
                 className="w-full h-full object-cover grayscale-[10%] brightness-[0.9]"
               />

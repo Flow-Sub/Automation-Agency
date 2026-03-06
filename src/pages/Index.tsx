@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Preloader from "@/components/Preloader";
 import HeroSection from "@/components/HeroSection";
 import AgenticAISection from "@/components/AgenticAISection";
 import DevelopmentSection from "@/components/DevelopmentSection";
@@ -12,6 +13,7 @@ import { TeamMembers } from "@/components/TeamMembers";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Preloader />
       <Navigation />
       <HeroSection />
       <AgenticAISection />
@@ -27,3 +29,4 @@ const Index = () => {
 };
 
 export default Index;
+
