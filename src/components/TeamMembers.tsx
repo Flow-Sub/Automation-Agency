@@ -29,7 +29,7 @@ const teamMembers = [
     role: "Project Manager",
     id: "001-H",
     img: team3,
-    bio: "Responsible for lead generation, client acquisition, and building strong business relationships to drive company growth and revenue.",
+    bio: "Translating business needs into technical execution—developing backend solutions, managing cross-functional teams, and acquiring clients to drive company expansion.",
     tag: "PM",
     pos: "center 25%"
   },
